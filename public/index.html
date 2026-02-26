@@ -3,50 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Character Prompts</title>
+    <title>Character Vault | Premium AI Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="mesh-bg"></div>
     <div class="app">
-        <!-- Header -->
         <header class="header">
             <div class="header-content">
-                <h1>🎭 Character Prompts</h1>
-                <p>Extract system prompts from AI characters</p>
+                <div class="badge-premium">PREMIUM AI ACCESS</div>
+                <h1>Character Vault</h1>
+                <p>The ultimate repository for AI character intelligence and system prompt extraction.</p>
             </div>
         </header>
 
-        <!-- Search -->
         <div class="search-wrapper">
             <div class="search-box">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
-                <input type="text" id="searchInput" placeholder="Search characters..." autocomplete="off">
+                <input type="text" id="searchInput" placeholder="Search the vault..." autocomplete="off">
                 <button id="clearSearch" class="clear-btn">×</button>
             </div>
         </div>
 
-        <!-- Loading -->
         <div id="loading" class="loader">
             <div class="loader-spinner"></div>
-            <p>Loading characters...</p>
+            <p>Synchronizing with Intelligence Core...</p>
         </div>
 
-        <!-- Character Grid -->
         <main class="main-content">
             <div id="characterGrid" class="grid"></div>
         </main>
 
-        <!-- Character Detail Modal -->
+        <footer class="footer">
+            <p>&copy; 2026 Character Vault Pro. Developed for Elite AI Research.</p>
+        </footer>
+
         <div id="characterModal" class="modal">
             <div class="modal-backdrop" id="modalBackdrop"></div>
             <div class="modal-container">
                 <div class="modal-header">
-                    <h2 id="modalTitle">Character Details</h2>
+                    <h2 id="modalTitle">Intelligence Data</h2>
                     <button class="modal-close" id="closeModal">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="18" y1="6" x2="6" y2="18"></line>
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
@@ -56,37 +60,18 @@
                     <div id="characterInfo"></div>
                     <div id="fetchDetailsSection" class="fetch-section">
                         <button id="fetchDetailsBtn" class="fetch-btn">
-                            <span>🔍 Fetch Details & System Prompt</span>
+                            <span>UNLOCK SYSTEM PROMPT</span>
                         </button>
                     </div>
                     <div id="detailsSection" class="details-section" style="display: none;">
                         <div id="characterDetails"></div>
-                        <div id="systemPromptSection" class="prompt-section">
+                        <div class="prompt-section">
                             <div class="prompt-header">
-                                <h3>System Prompt</h3>
+                                <h3>SYSTEM PROMPT</h3>
                                 <div class="prompt-actions">
-                                    <button id="copyPrompt" class="btn-icon" title="Copy">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                        </svg>
-                                    </button>
-                                    <button id="downloadJSON" class="btn-icon" title="Download JSON">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                            <polyline points="7 10 12 15 17 10"></polyline>
-                                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                                        </svg>
-                                    </button>
-                                    <button id="downloadTXT" class="btn-icon" title="Download TXT">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                            <polyline points="14 2 14 8 20 8"></polyline>
-                                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                                            <polyline points="10 9 9 9 8 9"></polyline>
-                                        </svg>
-                                    </button>
+                                    <button id="copyPrompt" class="btn-icon">Copy</button>
+                                    <button id="downloadJSON" class="btn-icon">JSON</button>
+                                    <button id="downloadTXT" class="btn-icon">TXT</button>
                                 </div>
                             </div>
                             <div id="systemPrompt" class="prompt-content"></div>
@@ -95,11 +80,8 @@
                 </div>
             </div>
         </div>
-
-        <!-- Toast -->
         <div id="toast" class="toast"></div>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>
